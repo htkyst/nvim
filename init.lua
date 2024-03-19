@@ -12,10 +12,10 @@ vim.cmd('colorscheme codedark')
 vim.api.nvim_create_autocmd("User", {
     pattern = "VeryLazy",
     callback = function()
-        require("core.keymap")
-        require("core.terminal")
-        require("core.lsp")
         require("core.autocmd")
+        require("core.keymap")
+        require("core.lsp")
+        require("core.terminal")
     end,
 })
 
