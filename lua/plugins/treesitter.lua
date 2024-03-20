@@ -33,12 +33,12 @@ return {
   },
   config = function()
       local configs = require("nvim-treesitter.configs")
-
       configs.setup({
-          ensure_installed = {"c", "cpp", "c_sharp", "lua", "vim", "vimdoc", "query"},
-          sync_install = false,
-          highlight = {enable = true},
-          indent = {enable = true},
+            ensure_installed = {"c", "cpp", "c_sharp", "lua", "vim", "vimdoc", "query"},
+            sync_install = false,
+            auto_install = false;
+            highlight = {enable = true},
+            indent = {enable = true},
       })
   end
 }

@@ -20,3 +20,4 @@ vim.opt.pumblend = 10
 vim.opt.termguicolors = true
 vim.opt.shell = 'pwsh.exe'
 vim.opt.modifiable = true
+vim.opt.showmode = false

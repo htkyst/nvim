@@ -1,4 +1,4 @@
-vim.loader.enable() 
+vim.loader.enable()
 
 -- leaderキーをspaceに変更
 vim.g.mapleader = " "
@@ -6,8 +6,8 @@ vim.g.mapleader = " "
 require("core.option")
 require("core.lazy")
 
--- Color scheme
-vim.cmd('colorscheme codedark')
+-- -- Color scheme
+vim.cmd('colorscheme onenord')
 
 vim.api.nvim_create_autocmd("User", {
     pattern = "VeryLazy",
