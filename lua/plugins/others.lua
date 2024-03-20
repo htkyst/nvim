@@ -86,5 +86,21 @@ return {
             -- vim.api.nvim_set_keymap('n', '<C-h>', '<Cmd>noh<CR>', kopts)
         end,
 
+    },
+
+    {
+        -- Rust tools
+        "simrat39/rust-tools.nvim"
+    },
+
+    {
+        -- 日本語入力のままInsert modeに移行する
+        "pepo-le/win-ime-con.nvim"
+    },
+
+    {
+        -- UI component Library for Neovim
+        "MunifTanjim/nui.nvim"
     }
+
 }

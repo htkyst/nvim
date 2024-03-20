@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 require("core.option")
 require("core.lazy")
 
--- -- Color scheme
+-- Color scheme
 vim.cmd('colorscheme onenord')
 
 vim.api.nvim_create_autocmd("User", {

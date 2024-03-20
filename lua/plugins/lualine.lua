@@ -1,6 +1,11 @@
 return {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons', 'lewis6991/gitsigns.nvim' },
+    dependencies = {
+        'nvim-tree/nvim-web-devicons',
+        'lewis6991/gitsigns.nvim',
+        'neovim/nvim-lspconfig',
+        'SmiteshP/nvim-navic',
+    },
     config = function()
         local config = {
 
@@ -35,7 +40,15 @@ return {
                         symbols = { modified = '󰷥', readonly = '', newfile = '✙' },
                     },
                 },
-                lualine_c = {},
+                lualine_c = {
+                    {
+                        'diagnostics',
+                        sources = { 'nvim_diagnostic', 'nvim_lsp' },
+                        sections = { 'error', 'warn', 'info', 'hint' },
+                        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+                    },
+                    { 'navic' },
+                },
                 lualine_x = {'encoding', 'fileformat', 'filetype'},
                 lualine_y = {'progress'},
                 lualine_z = {'location'}

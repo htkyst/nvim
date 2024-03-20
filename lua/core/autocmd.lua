@@ -95,3 +95,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- CursorHoldイベント時のみコンテキストを更新する
+vim.api.nvim_create_autocmd("BufEnter", {
+    group = vim.api.nvim_create_augroup('nvim-navic', {}),
+    callback = function()
+        if vim.api.nvim_buf_line_count(0) > 10000 then
+            vim.b.navic_lazy_update_context = true
+        end
+    end,
+})
+

@@ -21,3 +21,7 @@ vim.opt.termguicolors = true
 vim.opt.shell = 'pwsh.exe'
 vim.opt.modifiable = true
 vim.opt.showmode = false
+
+vim.api.nvim_set_option('scrolloff', 4)
+vim.api.nvim_set_option('inccommand', 'split')
+vim.api.nvim_set_option('clipboard', 'unnamedplus')
