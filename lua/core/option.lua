@@ -18,10 +18,15 @@ vim.opt.undofile = false
 vim.opt.swapfile = false
 vim.opt.pumblend = 10
 vim.opt.termguicolors = true
-vim.opt.shell = 'pwsh.exe'
 vim.opt.modifiable = true
 vim.opt.showmode = false
+
+vim.opt.shell = 'pwsh.exe'
 
 vim.api.nvim_set_option('scrolloff', 4)
 vim.api.nvim_set_option('inccommand', 'split')
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
+
+vim.api.nvim_win_set_option(0, 'winblend', 20)
+
+vim.api.nvim_set_var('sqlite_clib_path', 'sqlite/sqlite3.dll')

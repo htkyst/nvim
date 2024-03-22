@@ -1,4 +1,5 @@
 return {
+
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
@@ -101,6 +102,11 @@ return {
     {
         -- UI component Library for Neovim
         "MunifTanjim/nui.nvim"
+    },
+
+    {
+        -- SQLite
+        "kkharji/sqlite.lua",
     }
 
 }
