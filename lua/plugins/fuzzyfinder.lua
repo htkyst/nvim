@@ -20,7 +20,8 @@ return {
             opts = {
                 -- your config goes here
             },
-        }
+        },
+        'rcarriga/nvim-notify',
     },
     config = function()
         local telescope = require('telescope')
@@ -47,6 +48,7 @@ return {
             }
         })
         telescope.load_extension('fzf')
+        telescope.load_extension('notify')
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>ff', builtin.find_files)
@@ -55,6 +57,8 @@ return {
 
         local themes = require('telescope.themes')
         vim.keymap.set('n', '<leader>fh', function() builtin.help_tags(themes.get_ivy()) end)
+
+        vim.keymap.set('n', '<leader>fn', function() telescope.extensions.notify.notify() end)
 
         require('telescope-all-recent').setup({
 

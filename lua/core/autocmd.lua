@@ -2,7 +2,7 @@
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("hightlight_yank", {clear = true}),
     callback = function()
-        vim.highlight.on_yank({timeout=1000})
+        vim.highlight.on_yank({timeout=1000})   -- 1sec
     end,
 })
 
@@ -83,19 +83,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
     vim.keymap.set('n', '<space>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, opts)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>f', function()
-      vim.lsp.buf.format { async = true }
+        vim.lsp.buf.format { async = true }
     end, opts)
   end,
 })
 
--- CursorHoldイベント時のみコンテキストを更新する
+-- Only update context when cursorHold event
 vim.api.nvim_create_autocmd("BufEnter", {
     group = vim.api.nvim_create_augroup('nvim-navic', {}),
     callback = function()

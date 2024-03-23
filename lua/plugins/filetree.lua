@@ -12,17 +12,43 @@ local function nvim_tree_on_attach(bufnr)
 end
 
 return {
-  "nvim-tree/nvim-tree.lua",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  keys = {
-    { "<Leader>n", "<cmd>NvimTreeToggle<CR>", { silent = true, desc = "NvimTreeToggle" } },
-  },
-  opts = {
-    on_attach = nvim_tree_on_attach,
-    filters = {
-      git_ignored = true,
-      dotfiles = false,
-      custom = { "^.git$", "node_modules" },
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+        {
+            "<Leader>n", "<cmd>NvimTreeToggle<CR>", { silent = true, desc = "NvimTreeToggle" }
+        },
     },
-  },
+    opts = {
+        sort_by = 'extension',
+        view = {
+            width = 30,
+            side = 'right',
+            signcolumn = 'no',
+        },
+        renderer = {
+            highlight_git = true,
+            highlight_opened_files = 'name',
+            icons = {
+                glyphs = {
+                    git = {
+                      unstaged = '!', renamed = '»', untracked = '?', deleted = '✘',
+                      staged = '✓', unmerged = '', ignored = '◌',
+                    },
+                },
+            },
+        },
+        filters = {
+            git_ignored = true,
+            dotfiles = false,
+            custom = { "^.git$", "node_modules" },
+        },
+        actions = {
+            expand_all = {
+                max_folder_discovery = 100,
+                exclude = { '.git', 'target', 'build' }
+            }
+        },
+        on_attach = nvim_tree_on_attach,
+    }
 }

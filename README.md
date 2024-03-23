@@ -1,1 +1,1 @@
-#NvimConfig
+# Neovim config 

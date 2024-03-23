@@ -1,14 +1,13 @@
 vim.loader.enable()
 
--- leaderキーをspaceに変更
-vim.g.mapleader = " "
-
 require("core.option")
+require("core.global")
 require("core.lazy")
 
 -- Color scheme
 vim.cmd('colorscheme onenord')
 
+-- Load plugins
 vim.api.nvim_create_autocmd("User", {
     pattern = "VeryLazy",
     callback = function()

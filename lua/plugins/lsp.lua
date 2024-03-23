@@ -19,7 +19,6 @@ return {
                         package_uninstalled = "✗"
                     },
                     check_outdated_packages_on_open = false,
-                    border = 'single'
                 }
             })
         end,
@@ -35,6 +34,7 @@ return {
         },
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local lspconfig = require("lspconfig")
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
@@ -43,35 +43,39 @@ return {
 
             mason_lspconfig.setup_handlers({
                 function(server_name)
-                    require("lspconfig")[server_name].setup {
+                    lspconfig[server_name].setup {
                         capabilities = capabilities
                     }
                 end,
 
                 ["rust_analyzer"] = function ()
                     require("rust-tools").setup {
-                        capabilities = capabilities
                     }
                 end,
 
                 ["lua_ls"] = function ()
-                    local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
                         settings = {
                             Lua = {
+                                runtime = {
+                                    version = 'LuaJIT',
+                                },
+                                workspace = {
+                                    checkThirdParty = false,
+                                    library = {
+                                        vim.env.VIMRUNTIME,
+                                    },
+                                },
                                 diagnostics = {
                                     globals = { "vim" }
                                 }
                             }
                         },
-                        capabilities = capabilities
                     }
                 end,
 
                 ["clangd"] = function ()
-                    local lspconfig = require("lspconfig")
                     lspconfig.clangd.setup({
-                        capabilities = capabilities
                     })
                 end,
             })

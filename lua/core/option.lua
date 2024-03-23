@@ -1,32 +1,33 @@
-vim.opt.relativenumber = true
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
-vim.opt.number = true
-vim.opt.showcmd = true
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.wildmenu = true
-vim.opt.smartindent = true
-vim.opt.ruler = true
-vim.opt.cursorline = true
-vim.opt.hidden = true
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.wrap = false
-vim.opt.undofile = false
-vim.opt.swapfile = false
-vim.opt.pumblend = 10
-vim.opt.termguicolors = true
-vim.opt.modifiable = true
-vim.opt.showmode = false
+local function nvim_set_option_value(name, value, opts)
+    vim.api.nvim_set_option_value(name, value, opts or {})
+end
 
-vim.opt.shell = 'pwsh.exe'
-
-vim.api.nvim_set_option('scrolloff', 4)
-vim.api.nvim_set_option('inccommand', 'split')
-vim.api.nvim_set_option('clipboard', 'unnamedplus')
-
-vim.api.nvim_win_set_option(0, 'winblend', 20)
-
-vim.api.nvim_set_var('sqlite_clib_path', 'sqlite/sqlite3.dll')
+nvim_set_option_value('number', true)
+nvim_set_option_value('relativenumber', true)
+nvim_set_option_value('encoding', 'utf-8')
+nvim_set_option_value('fileencoding', 'utf-8')
+nvim_set_option_value('showcmd', true)
+nvim_set_option_value('splitbelow', true)
+nvim_set_option_value('splitright', true)
+nvim_set_option_value('wildmenu', true)
+nvim_set_option_value('smartindent', true)
+nvim_set_option_value('ruler', true)
+nvim_set_option_value('cursorline', true)
+nvim_set_option_value('hidden', true)
+nvim_set_option_value('expandtab', true)
+nvim_set_option_value('tabstop', 4)
+nvim_set_option_value('shiftwidth', 4)
+nvim_set_option_value('wrap', false)
+nvim_set_option_value('undofile', false)
+nvim_set_option_value('swapfile', false)
+nvim_set_option_value('pumblend', 10)
+nvim_set_option_value('termguicolors', true)
+nvim_set_option_value('modifiable', true)
+nvim_set_option_value('showmode', false)
+nvim_set_option_value('shell', 'pwsh.exe')
+nvim_set_option_value('scrolloff', 4)
+nvim_set_option_value('inccommand', 'split')
+nvim_set_option_value('clipboard', 'unnamedplus')
+nvim_set_option_value('winblend', 20, { win = 0 })
+nvim_set_option_value('loaded_netrw', 1)
+nvim_set_option_value('loaded_netrwPlugin', 1)

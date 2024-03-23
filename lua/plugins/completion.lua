@@ -1,6 +1,6 @@
 return {
     "hrsh7th/nvim-cmp",
-    event = { "InsertEnter", "CmdlineEnter" },
+    event = { "InsertEnter" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
@@ -50,7 +50,7 @@ return {
                     select = false,
                 }),
             },
-            sources = {
+            sources = cmp.config.sources {
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
                 { name = "nvim_lua" },
