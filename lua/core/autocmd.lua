@@ -105,3 +105,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end,
 })
 
+-- PDF file to text
+vim.api.nvim_create_autocmd("BufRead", {
+    group = vim.api.nvim_create_augroup('pdf2text', {}),
+    pattern = "*.pdf",
+    command = "enew | 0read !pdftotext -layout -nopgbrk \"#\" -",
+})
+

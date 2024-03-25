@@ -9,18 +9,18 @@ return {
             build =
             'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
         },
-        {
-            'prochri/telescope-all-recent.nvim',
-            dependencies = {
-                "nvim-telescope/telescope.nvim",
-                "kkharji/sqlite.lua",
-                -- optional, if using telescope for vim.ui.select
-                "stevearc/dressing.nvim"
-            },
-            opts = {
-                -- your config goes here
-            },
-        },
+        -- {
+        --     'prochri/telescope-all-recent.nvim',
+        --     dependencies = {
+        --         "nvim-telescope/telescope.nvim",
+        --         "kkharji/sqlite.lua",
+        --         -- optional, if using telescope for vim.ui.select
+        --         "stevearc/dressing.nvim"
+        --     },
+        --     opts = {
+        --         -- your config goes here
+        --     },
+        -- },
         'rcarriga/nvim-notify',
     },
     config = function()
@@ -60,8 +60,8 @@ return {
 
         vim.keymap.set('n', '<leader>fn', function() telescope.extensions.notify.notify() end)
 
-        require('telescope-all-recent').setup({
-
-        })
+        -- require('telescope-all-recent').setup({
+        --
+        -- })
     end,
 }
