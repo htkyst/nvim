@@ -59,9 +59,5 @@ return {
         vim.keymap.set('n', '<leader>fh', function() builtin.help_tags(themes.get_ivy()) end)
 
         vim.keymap.set('n', '<leader>fn', function() telescope.extensions.notify.notify() end)
-
-        -- require('telescope-all-recent').setup({
-        --
-        -- })
     end,
 }
