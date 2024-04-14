@@ -5,7 +5,7 @@ require("core.global")
 require("core.lazy")
 
 -- Color scheme
-vim.cmd("colorscheme onenord")
+vim.cmd("colorscheme tokyonight")
 
 -- Load plugins
 vim.api.nvim_create_autocmd("User", {
