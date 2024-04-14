@@ -50,6 +50,7 @@ return {
 	},
 
 	{
+		-- Need: TSInstall html
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup()
