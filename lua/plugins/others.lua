@@ -81,4 +81,12 @@ return {
 			require("colorizer").setup()
 		end,
 	},
+
+	{
+		-- Split window resizer
+		"simeji/winresizer",
+		keys = {
+			{ "<leader>w", ":WinResizerStartResize<CR>", desc = "WinResizerStartResize" },
+		},
+	},
 }

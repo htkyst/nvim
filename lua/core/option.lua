@@ -23,7 +23,6 @@ nvim_set_option_value("swapfile", false)
 nvim_set_option_value("termguicolors", true)
 nvim_set_option_value("modifiable", true)
 nvim_set_option_value("showmode", false)
-nvim_set_option_value("shell", "pwsh.exe")
 nvim_set_option_value("shellcmdflag", "-command")
 nvim_set_option_value("shellquote", '"')
 nvim_set_option_value("shellxquote", "")
@@ -34,3 +33,10 @@ nvim_set_option_value("winblend", 20, { win = 0 })
 nvim_set_option_value("pumblend", 10)
 nvim_set_option_value("loaded_netrw", 1)
 nvim_set_option_value("loaded_netrwPlugin", 1)
+
+if os.getenv("OS") then
+	-- Windows
+	nvim_set_option_value("shell", "pwsh.exe")
+elseif os.getenv("HOME") then
+	-- Unix
+end
