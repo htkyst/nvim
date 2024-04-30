@@ -7,9 +7,10 @@
   > Using [nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 - Deno
   > Using [toppair/peek.nvim](https://github.com/toppair/peek.nvim)
-- ripgrep, fd
-  > Using telescope
-- lazygit
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fd(Windows Powershell) or fd-find(Debian)](https://github.com/sharkdp/fd?tab=readme-ov-file#installation)
+  > Using [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file)
   > Using lazygit window
 
 ## Keymap
