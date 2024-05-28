@@ -1,11 +1,13 @@
 vim.loader.enable()
 
-require("core.option")
 require("core.global")
+require("core.option")
 require("core.lazy")
 
--- Color scheme
-vim.cmd("colorscheme tokyonight")
+if vim.g.vscode == nil then
+	-- Color scheme
+	vim.cmd("colorscheme tokyonight")
+end
 
 -- Load plugins
 vim.api.nvim_create_autocmd("User", {
@@ -13,6 +15,5 @@ vim.api.nvim_create_autocmd("User", {
 	callback = function()
 		require("core.autocmd")
 		require("core.keymap")
-		require("core.terminal")
 	end,
 })

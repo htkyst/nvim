@@ -8,18 +8,6 @@ return {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 		},
-		-- {
-		--     'prochri/telescope-all-recent.nvim',
-		--     dependencies = {
-		--         "nvim-telescope/telescope.nvim",
-		--         "kkharji/sqlite.lua",
-		--         -- optional, if using telescope for vim.ui.select
-		--         "stevearc/dressing.nvim"
-		--     },
-		--     opts = {
-		--         -- your config goes here
-		--     },
-		-- },
 		"rcarriga/nvim-notify",
 	},
 	config = function()
@@ -52,6 +40,7 @@ return {
 		local builtin = require("telescope.builtin")
 		local themes = require("telescope.themes")
 
+		-- Keymap
 		vim.keymap.set("n", "<leader>ff", builtin.find_files)
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep)
 		vim.keymap.set("n", "<leader>fb", builtin.buffers)
