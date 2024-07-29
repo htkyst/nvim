@@ -1,10 +1,11 @@
 vim.loader.enable()
 
+-- Common settings
 require("core.global")
 require("core.option")
-require("core.lazy")
 
 if vim.g.vscode == nil then
+	require("core.lazy")
 	-- Color scheme
 	vim.cmd("colorscheme tokyonight")
 end
