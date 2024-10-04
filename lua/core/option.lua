@@ -37,4 +37,5 @@ if os.getenv("OS") then
 	nvim_set_option_value("shell", "pwsh.exe")
 elseif os.getenv("HOME") then
 	-- Unix
+	nvim_set_option_value("shell", "bash")
 end

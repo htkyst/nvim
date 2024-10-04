@@ -23,21 +23,33 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Restore the cursor position when open the file
-vim.api.nvim_create_autocmd("BufReadPost", {
-	group = vim.api.nvim_create_augroup("restore_cursor", { clear = true }),
+-- Save cursor position when close file
+vim.api.nvim_create_autocmd("BufWinLeave", {
+	group = vim.api.nvim_create_augroup("save_cursor_position", { clear = true }),
+	pattern = "*",
 	callback = function()
-		local mark = vim.api.nvim_buf_get_mark(0, '"')
-		local lcount = vim.api.nvim_buf_line_count(0)
-		if mark[1] > 0 and mark[1] <= lcount then
-			pcall(vim.api.nvim_win_set_cursor, 0, mark)
+		local buf = vim.api.nvim_get_current_buf()
+		local pos = vim.api.nvim_win_get_cursor(0)
+		vim.api.nvim_buf_set_var(buf, "last_cursor_pos", pos)
+	end,
+})
+
+-- Restore cursor position when open file
+vim.api.nvim_create_autocmd("BufReadPost", {
+	group = vim.api.nvim_create_augroup("restore_cursor_position", { clear = true }),
+	pattern = "*",
+	callback = function()
+		local buf = vim.api.nvim_get_current_buf()
+		local has_pos, pos = pcall(vim.api.nvim_buf_get_var, buf, "last_cursor_pos")
+		if has_pos and pos[1] <= vim.api.nvim_buf_line_count(buf) then
+			vim.api.nvim_win_set_cursor(0, pos)
 		end
 	end,
 })
 
 -- Not create undo file if under the tmp folder
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	group = vim.api.nvim_create_augroup("dont_create_undo", { clear = true }),
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = vim.api.nvim_create_augroup("do_not_create_undo", { clear = true }),
 	pattern = { "/tmp/*" },
 	command = "setlocal noundofile",
 })
