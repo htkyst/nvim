@@ -31,8 +31,6 @@ nvim_set_option_value("inccommand", "split")
 nvim_set_option_value("clipboard", "unnamedplus")
 nvim_set_option_value("winblend", 20, { win = 0 })
 nvim_set_option_value("pumblend", 10)
-nvim_set_option_value("loaded_netrw", 1)
-nvim_set_option_value("loaded_netrwPlugin", 1)
 
 if os.getenv("OS") then
 	-- Windows
