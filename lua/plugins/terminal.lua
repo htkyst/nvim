@@ -31,7 +31,6 @@ return {
 
 		local lazygit = Terminal:new({
 			cmd = "lazygit",
-			dir = "git_dir",
 			direction = "float",
 			float_opts = {
 				border = "double",

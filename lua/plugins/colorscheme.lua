@@ -1,8 +1,4 @@
 return {
-	-- {
-	-- 	"rmehri01/onenord.nvim",
-	-- },
-
 	{
 		"folke/tokyonight.nvim",
 		config = function()
