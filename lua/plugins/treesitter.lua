@@ -5,7 +5,6 @@ return {
 		event = "UIEnter",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
-			"windwp/nvim-ts-autotag",
 		},
 		opts = {
 			highlight = { enable = true },
@@ -46,14 +45,6 @@ return {
 					enable = true,
 				},
 			})
-		end,
-	},
-
-	{
-		-- Need: TSInstall html
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup()
 		end,
 	},
 }

@@ -15,7 +15,7 @@
 
 ## Keymap
 
-- Leader key: <Space>
+- Leader key: Space Key
 
 | Key        | Mode          | group        | function                                                 |
 | :--------- | ------------- | ------------ | -------------------------------------------------------- |

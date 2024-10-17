@@ -1,6 +1,7 @@
 return {
 
 	{
+		-- Auto pair
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
@@ -28,11 +29,9 @@ return {
 	},
 
 	{
-		-- TODO: setting
 		"kevinhwang91/nvim-hlslens",
 		config = function()
 			require("hlslens").setup()
-
 			-- local kopts = { noremap = true, silent = true }
 			-- vim.api.nvim_set_keymap('n', 'n',
 			--     [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
@@ -61,7 +60,7 @@ return {
 	},
 
 	{
-		-- For doxygen
+		-- Doxygen
 		"danymat/neogen",
 		event = "VeryLazy",
 		version = "*",
@@ -70,23 +69,5 @@ return {
 				enabled = true,
 			})
 		end,
-	},
-
-	{
-		-- Color highlighter
-		-- Need: TSInstall css, html, etc
-		"norcalli/nvim-colorizer.lua",
-		event = "VeryLazy",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
-
-	{
-		-- Split window resizer
-		"simeji/winresizer",
-		keys = {
-			{ "<leader>w", ":WinResizerStartResize<CR>", desc = "WinResizerStartResize" },
-		},
 	},
 }

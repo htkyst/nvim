@@ -1,7 +1,7 @@
 return {
-    -- Neovim Notification manager
-    'rcarriga/nvim-notify',
-    config = function()
-        vim.notify = require('notify')
-    end,
+	-- Neovim notification manager
+	"rcarriga/nvim-notify",
+	config = function()
+		vim.notify = require("notify")
+	end,
 }
