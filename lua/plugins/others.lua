@@ -60,13 +60,26 @@ return {
 	},
 
 	{
-		-- Doxygen
+		-- Doxygen generater
 		"danymat/neogen",
 		event = "VeryLazy",
 		version = "*",
 		config = function()
 			require("neogen").setup({
 				enabled = true,
+			})
+		end,
+	},
+
+	{
+		-- Color highlighter
+		"norcalli/nvim-colorizer.lua",
+		event = "VeryLazy",
+		config = function()
+			require("colorizer").setup({
+				"css",
+				"javascript",
+				"lua",
 			})
 		end,
 	},
