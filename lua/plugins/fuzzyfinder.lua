@@ -12,16 +12,17 @@ return {
 	},
 	config = function()
 		local telescope = require("telescope")
+		local builtin = require("telescope.builtin")
+		local themes = require("telescope.themes")
+		local actions = require("telescope.actions")
+
 		telescope.setup({
 			defaults = {
 				mappings = {
 					i = {
-						["<C-h>"] = "which_key",
-						["<ESC>"] = require("telescope.actions").close,
+						["<ESC>"] = actions.close,
 					},
-					n = {
-						["<C-h>"] = "which_key",
-					},
+					n = {},
 				},
 				winblend = 20,
 			},
@@ -36,9 +37,6 @@ return {
 		})
 		telescope.load_extension("fzf")
 		telescope.load_extension("notify")
-
-		local builtin = require("telescope.builtin")
-		local themes = require("telescope.themes")
 
 		-- Keymap
 		vim.keymap.set("n", "<leader>ff", builtin.find_files)
