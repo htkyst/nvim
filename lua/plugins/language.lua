@@ -2,12 +2,18 @@ return {
 	{
 		-- Need: TSInstall html
 		"windwp/nvim-ts-autotag",
-		ft = { "html" },
+		event = "InsertEnter",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 		},
 		config = function()
-			require("nvim-ts-autotag").setup()
+			require("nvim-ts-autotag").setup({
+				per_filetype = {
+					["html"] = {
+						enable_close = true,
+					},
+				},
+			})
 		end,
 	},
 
@@ -17,7 +23,11 @@ return {
 		"norcalli/nvim-colorizer.lua",
 		event = "VeryLazy",
 		config = function()
-			require("colorizer").setup()
+			require("colorizer").setup({
+				"css",
+				"javascript",
+				"lua",
+			})
 		end,
 	},
 }

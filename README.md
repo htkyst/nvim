@@ -60,6 +60,12 @@
 | <leader>wo | Normal        | Zoom the window                                          |
 | <leader>t  | Normal        | Create float terminal window                             |
 | <leader>g  | Normal        | Create float lazygit window                              |
+| <leader>xx | Normal        | Diagnostics                                              |
+| <leader>xX | Normal        | Buffer Diagnostics                                       |
+| <leader>cs | Normal        | Symbles                                                  |
+| <leader>cl | Normal        | LSP Definitions / references / ...                       |
+| <leader>xL | Normal        | Location List                                            |
+| <leader>xQ | Normal        | Quickfix List                                            |
 
 ## Command
 

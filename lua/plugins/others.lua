@@ -19,11 +19,13 @@ return {
 	},
 
 	{
+		-- Smooth scrolling
 		"karb94/neoscroll.nvim",
 		config = true,
 	},
 
 	{
+		-- Scroll bar
 		"petertriho/nvim-scrollbar",
 		config = true,
 	},
@@ -31,20 +33,7 @@ return {
 	{
 		"kevinhwang91/nvim-hlslens",
 		config = function()
-			require("hlslens").setup()
-			-- local kopts = { noremap = true, silent = true }
-			-- vim.api.nvim_set_keymap('n', 'n',
-			--     [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-			--     kopts)
-			-- vim.api.nvim_set_keymap('n', 'N',
-			--     [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-			--     kopts)
-			-- vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-			-- vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-			-- vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-			-- vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-			--
-			-- vim.api.nvim_set_keymap('n', '<C-h>', '<Cmd>noh<CR>', kopts)
+			require("scrollbar.handlers.search").setup()
 		end,
 	},
 
@@ -72,15 +61,7 @@ return {
 	},
 
 	{
-		-- Color highlighter
-		"norcalli/nvim-colorizer.lua",
-		event = "VeryLazy",
-		config = function()
-			require("colorizer").setup({
-				"css",
-				"javascript",
-				"lua",
-			})
-		end,
+		-- Automatically highlighting other uses of the word
+		"RRethy/vim-illuminate",
 	},
 }
