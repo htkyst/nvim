@@ -17,47 +17,48 @@
 
 - Leader key: Space Key
 
-| Key        | Mode          | group        | function                                                 |
-| :--------- | ------------- | ------------ | -------------------------------------------------------- |
-| gD         | Normal        | Built in LSP | lsp.buf.declaration                                      |
-| gd         | Normal        | Built in LSP | lsp.buf.definition                                       |
-| gK         | Normal        | Built in LSP | lsp.buf.hover                                            |
-| gi         | Normal        | Built in LSP | lsp.buf.implementation                                   |
-| gh         | Normal        | Built in LSP | lsp.buf.signature_help                                   |
-| gwa        | Normal        | Built in LSP | lsp.buf.add_workspace_folder                             |
-| gwr        | Normal        | Built in LSP | lsp.buf.remove_workspace_folder                          |
-| gwl        | Normal        | Built in LSP | print(vim.inspect(vim.lsp.buf.list_workspace_folders())) |
-| gt         | Normal        | Built in LSP | lsp.buf.type_definition                                  |
-| grn        | Normal        | Built in LSP | lsp.buf.rename                                           |
-| gca        | Normal        | Built in LSP | lsp.buf.code_action                                      |
-| gr         | Normal        | Built in LSP | lsp.buf.references                                       |
-| gf         | Normal        | Built in LSP | lsp.buf.format({async=true})                             |
-| ge         | Normal        | Built in LSP | diagnostic.open_float                                    |
-| [d         | Normal        | Built in LSP | diagnostic.goto_prev                                     |
-| ]d         | Normal        | Built in LSP | diagnostic.goto_next                                     |
-| gq         | Normal        | Built in LSP | diagnostic.setloclist                                    |
-| tt         | Normal        | Terminal     | split new terminal window in below                       |
-| bn         | Normal        | Buffer       | Open next buffer                                         |
-| bp         | Normal        | Buffer       | Open preview buffer                                      |
-| <leader>h  | Normal        | Window       | Move above pane                                          |
-| <leader>j  | Normal        | Window       | Move left pane                                           |
-| <leader>k  | Normal        | Window       | Move right pane                                          |
-| <leader>l  | Normal        | Window       | Move below pane                                          |
-| gcc        | Normal        | Comment      | Line comment toggle                                      |
-| gbc        | Normal        | Comment      | Block comment toggle                                     |
-| gc         | Normal Visual | Comment      | Line comment(Normal or Visual)                           |
-| gb         | Normal Visual | Comment      | Block comment(Normal or Visual)                          |
-| <leader>n  | Normal        | File tree    | Toggle file tree                                         |
-| <leader>mp | Normal Visual | Formatter    | Formatt file or range                                    |
-| <leader>ml | Normal        | Linter       | Trigger linting for current file                         |
-| <leader>ff | Normal        | Fuzzy finder | find files                                               |
-| <leader>fg | Normal        | Fuzzy finder | live grep                                                |
-| <leader>fb | Normal        | Fuzzy finder | find buffer                                              |
-| <leader>fh | Normal        | Fuzzy finder | find help tags                                           |
-| <leader>fn | Normal        | Fuzzy finder | find notify                                              |
-| <leader>w  | Normal        | Window       | Resize pane                                              |
-| <leader>t  | Normal        | Window       | Create float terminal window                             |
-| <leader>g  | Normal        | Window       | Create float lazygit window                              |
+| Key        | Mode          | function                                                 |
+| :--------- | ------------- | -------------------------------------------------------- |
+| gD         | Normal        | lsp.buf.declaration                                      |
+| gd         | Normal        | lsp.buf.definition                                       |
+| gK         | Normal        | lsp.buf.hover                                            |
+| gi         | Normal        | lsp.buf.implementation                                   |
+| gh         | Normal        | lsp.buf.signature_help                                   |
+| gwa        | Normal        | lsp.buf.add_workspace_folder                             |
+| gwr        | Normal        | lsp.buf.remove_workspace_folder                          |
+| gwl        | Normal        | print(vim.inspect(vim.lsp.buf.list_workspace_folders())) |
+| gt         | Normal        | lsp.buf.type_definition                                  |
+| grn        | Normal        | lsp.buf.rename                                           |
+| gca        | Normal        | lsp.buf.code_action                                      |
+| gr         | Normal        | lsp.buf.references                                       |
+| gf         | Normal        | lsp.buf.format({async=true})                             |
+| ge         | Normal        | diagnostic.open_float                                    |
+| [d         | Normal        | diagnostic.goto_prev                                     |
+| ]d         | Normal        | diagnostic.goto_next                                     |
+| gq         | Normal        | diagnostic.setloclist                                    |
+| tt         | Normal        | split new terminal window in below                       |
+| bn         | Normal        | Open next buffer                                         |
+| bp         | Normal        | Open preview buffer                                      |
+| <leader>h  | Normal        | Move above pane                                          |
+| <leader>j  | Normal        | Move left pane                                           |
+| <leader>k  | Normal        | Move right pane                                          |
+| <leader>l  | Normal        | Move below pane                                          |
+| gcc        | Normal        | Line comment toggle                                      |
+| gbc        | Normal        | Block comment toggle                                     |
+| gc         | Normal Visual | Line comment(Normal or Visual)                           |
+| gb         | Normal Visual | Block comment(Normal or Visual)                          |
+| <leader>n  | Normal        | Toggle file tree                                         |
+| <leader>mp | Normal Visual | Formatt file or range                                    |
+| <leader>ml | Normal        | Trigger linting for current file                         |
+| <leader>ff | Normal        | find files                                               |
+| <leader>fg | Normal        | live grep                                                |
+| <leader>fb | Normal        | find buffer                                              |
+| <leader>fh | Normal        | find help tags                                           |
+| <leader>fn | Normal        | find notify                                              |
+| <leader>w  | Normal        | Resize pane                                              |
+| <leader>wo | Normal        | Zoom the window                                          |
+| <leader>t  | Normal        | Create float terminal window                             |
+| <leader>g  | Normal        | Create float lazygit window                              |
 
 ## Command
 
