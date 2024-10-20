@@ -7,6 +7,7 @@ return {
 			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 		},
 		"tsakirist/telescope-lazy.nvim",
+		"nvim-telescope/telescope-media-files.nvim",
 		"rcarriga/nvim-notify",
 	},
 	config = function()
@@ -32,12 +33,16 @@ return {
 					override_file_sorter = true,
 					case_mode = "smart_case",
 				},
+				media_files = {
+					filetypes = { "png", "webp", "jpg", "jpeg", "bmp" },
+				},
 			},
 		})
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("notify")
 		telescope.load_extension("lazy")
+		telescope.load_extension("media_files")
 
 		-- Key map
 		vim.keymap.set("n", "<leader>ff", builtin.find_files)
@@ -51,6 +56,9 @@ return {
 		end)
 		vim.keymap.set("n", "<leader>fp", function()
 			telescope.extensions.lazy.lazy()
+		end)
+		vim.keymap.set("n", "<leader>fi", function()
+			telescope.extensions.media_files.media_files()
 		end)
 	end,
 }
