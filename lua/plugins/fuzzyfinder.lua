@@ -7,8 +7,6 @@ return {
 			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 		},
 		"tsakirist/telescope-lazy.nvim",
-		"nvim-tree/nvim-web-devicons",
-		"nvim-lua/plenary.nvim",
 		"rcarriga/nvim-notify",
 	},
 	config = function()

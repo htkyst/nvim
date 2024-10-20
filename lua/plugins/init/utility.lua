@@ -13,4 +13,8 @@ return {
 		-- Popup API Library
 		"nvim-lua/popup.nvim",
 	},
+
+	{
+		"nvim-tree/nvim-web-devicons",
+	},
 }
