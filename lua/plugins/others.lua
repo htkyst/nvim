@@ -44,11 +44,6 @@ return {
 	},
 
 	{
-		-- UI component Library for Neovim
-		"MunifTanjim/nui.nvim",
-	},
-
-	{
 		-- Doxygen generater
 		"danymat/neogen",
 		event = "VeryLazy",

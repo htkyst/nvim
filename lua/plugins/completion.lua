@@ -4,10 +4,14 @@ return {
 		event = { "BufEnter" },
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"hrsh7th/cmp-nvim-lsp-document-symbol",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-calc",
+			"f3fora/cmp-spell",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"onsails/lspkind.nvim",
@@ -15,6 +19,7 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
+			local lspkind = require("lspkind")
 
 			cmp.setup({
 				window = {
@@ -33,10 +38,11 @@ return {
 					end,
 				},
 				formatting = {
-					format = require("lspkind").cmp_format({
+					format = lspkind.cmp_format({
 						mode = "symbol",
 						maxwidth = 50,
 						ellipsis_char = "...",
+						show_labelDetails = true,
 					}),
 				},
 				mapping = {
@@ -57,15 +63,26 @@ return {
 					{ name = "nvim_lua" },
 					{ name = "path" },
 					{ name = "dictionary", keyword_length = 2 },
+					{ name = "nvim_lua" },
+					{ name = "calc" },
+					{
+						name = "spell",
+						option = {
+							keep_all_entries = false,
+							preselect_correct_word = true,
+						},
+					},
 				}),
 			})
 
 			-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 			cmp.setup.cmdline({ "/", "?" }, {
 				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp_document_symbol" },
+				}, {
 					{ name = "buffer" },
-				},
+				}),
 			})
 
 			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).

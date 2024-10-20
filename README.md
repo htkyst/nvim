@@ -56,6 +56,7 @@
 | <leader>fb | Normal        | find buffer                                              |
 | <leader>fh | Normal        | find help tags                                           |
 | <leader>fn | Normal        | find notify                                              |
+| <leader>fp | Normal        | find Lazy plugins                                        |
 | <leader>w  | Normal        | Resize pane                                              |
 | <leader>wo | Normal        | Zoom the window                                          |
 | <leader>t  | Normal        | Create float terminal window                             |

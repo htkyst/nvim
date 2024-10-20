@@ -20,7 +20,7 @@ nvim_set_option_value("shiftwidth", 4)
 nvim_set_option_value("wrap", false)
 nvim_set_option_value("undofile", false)
 nvim_set_option_value("swapfile", false)
-nvim_set_option_value("termguicolors", true)
+nvim_set_option_value("termguicolors", true, { scope = "global" })
 nvim_set_option_value("modifiable", true)
 nvim_set_option_value("showmode", false)
 nvim_set_option_value("shellquote", '"')
@@ -31,6 +31,7 @@ nvim_set_option_value("incsearch", true)
 nvim_set_option_value("clipboard", "unnamedplus")
 nvim_set_option_value("winblend", 20, { win = 0 })
 nvim_set_option_value("pumblend", 10)
+nvim_set_option_value("spell", true)
 
 if os.getenv("OS") then
 	-- Windows

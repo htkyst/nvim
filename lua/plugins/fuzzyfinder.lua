@@ -2,12 +2,13 @@ return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.6",
 	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-		"nvim-lua/plenary.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 		},
+		"tsakirist/telescope-lazy.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"nvim-lua/plenary.nvim",
 		"rcarriga/nvim-notify",
 	},
 	config = function()
@@ -35,10 +36,12 @@ return {
 				},
 			},
 		})
+
 		telescope.load_extension("fzf")
 		telescope.load_extension("notify")
+		telescope.load_extension("lazy")
 
-		-- Keymap
+		-- Key map
 		vim.keymap.set("n", "<leader>ff", builtin.find_files)
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep)
 		vim.keymap.set("n", "<leader>fb", builtin.buffers)
@@ -47,6 +50,9 @@ return {
 		end)
 		vim.keymap.set("n", "<leader>fn", function()
 			telescope.extensions.notify.notify()
+		end)
+		vim.keymap.set("n", "<leader>fp", function()
+			telescope.extensions.lazy.lazy()
 		end)
 	end,
 }
