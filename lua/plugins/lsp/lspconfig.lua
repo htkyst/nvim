@@ -1,24 +1,25 @@
 return {
 	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-		},
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup({
+				ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					},
+				},
+			})
+		end,
 	},
 
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
-			"neovim/nvim-lspconfig",
-			"williamboman/mason.nvim",
-			"hrsh7th/cmp-nvim-lsp",
-			{
-				"simrat39/rust-tools.nvim",
-				ft = "rs",
-				dependencies = {
-					"neovim/nvim-lspconfig",
-				},
-			},
+			{ "neovim/nvim-lspconfig" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "simrat39/rust-tools.nvim", ft = "rs" },
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -26,7 +27,12 @@ return {
 			local mason_lspconfig = require("mason-lspconfig")
 
 			mason_lspconfig.setup({
-				ensure_installed = { "lua_ls", "rust_analyzer", "clangd" },
+				ensure_installed = {
+					"lua_ls",
+					"rust_analyzer",
+					"clangd",
+					"csharp_ls",
+				},
 			})
 
 			mason_lspconfig.setup_handlers({
@@ -34,10 +40,6 @@ return {
 					lspconfig[server_name].setup({
 						capabilities = capabilities,
 					})
-				end,
-
-				["rust_analyzer"] = function()
-					require("rust-tools").setup({})
 				end,
 
 				["lua_ls"] = function()
@@ -58,68 +60,28 @@ return {
 								},
 							},
 						},
+						capabilities = capabilities,
 					})
 				end,
 
-				["clangd"] = function()
-					lspconfig.clangd.setup({})
+				["rust_analyzer"] = function()
+					lspconfig.rust_analyzer.setup({
+						capabilities = capabilities,
+					})
+					require("rust-tools").setup({})
 				end,
-			})
-		end,
-	},
 
-	{
-		"SmiteshP/nvim-navic",
-		dependencies = "neovim/nvim-lspconfig",
-		config = function()
-			require("nvim-navic").setup({
-				icons = {
-					File = "󰈙 ",
-					Module = " ",
-					Namespace = "󰌗 ",
-					Package = " ",
-					Class = "󰌗 ",
-					Method = "󰆧 ",
-					Property = " ",
-					Field = " ",
-					Constructor = " ",
-					Enum = "󰕘",
-					Interface = "󰕘",
-					Function = "󰊕 ",
-					Variable = "󰆧 ",
-					Constant = "󰏿 ",
-					String = "󰀬 ",
-					Number = "󰎠 ",
-					Boolean = "◩ ",
-					Array = "󰅪 ",
-					Object = "󰅩 ",
-					Key = "󰌋 ",
-					Null = "󰟢 ",
-					EnumMember = " ",
-					Struct = "󰌗 ",
-					Event = " ",
-					Operator = "󰆕 ",
-					TypeParameter = "󰊄 ",
-				},
-				lsp = {
-					auto_attach = true,
-				},
-				highlight = true,
-			})
-		end,
-	},
+				["clangd"] = function()
+					lspconfig.clangd.setup({
+						capabilities = capabilities,
+					})
+				end,
 
-	{
-		"SmiteshP/nvim-navbuddy",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"numToStr/Comment.nvim",
-		},
-		config = function()
-			require("nvim-navbuddy").setup({
-				lsp = {
-					auto_attach = true,
-				},
+				["csharp_ls"] = function()
+					lspconfig.csharp_ls.setup({
+						capabilities = capabilities,
+					})
+				end,
 			})
 		end,
 	},
