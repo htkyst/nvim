@@ -67,6 +67,7 @@
 | <leader>cl | Normal        | LSP Definitions / references / ...                       |
 | <leader>xL | Normal        | Location List                                            |
 | <leader>xQ | Normal        | Quickfix List                                            |
+| q          | Normal        | Delete current buffer                                    |
 
 ## Command
 
