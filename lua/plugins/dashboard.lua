@@ -25,6 +25,7 @@ return {
 			dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
 			-- dashboard.button("s", " " .. "Restore Session", '<cmd>lua require("persistence").load()<cr>'),
 			dashboard.button("c", " " .. " Config", ":e ~/.config/nvim/ <CR>"),
+			dashboard.button("h", "？" .. " Help", ":e ~/.config/nvim/README.md <CR>"),
 			dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
 			dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 		}

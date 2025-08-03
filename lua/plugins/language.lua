@@ -1,6 +1,6 @@
 return {
 	{
-		-- Need: TSInstall html
+		-- Need: TSInstall
 		"windwp/nvim-ts-autotag",
 		event = "InsertEnter",
 		dependencies = {
@@ -10,6 +10,9 @@ return {
 			require("nvim-ts-autotag").setup({
 				per_filetype = {
 					["html"] = {
+						enable_close = true,
+					},
+					["tsx"] = {
 						enable_close = true,
 					},
 				},

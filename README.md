@@ -68,6 +68,8 @@
 | <leader>xL | Normal        | Location List                                            |
 | <leader>xQ | Normal        | Quickfix List                                            |
 | q          | Normal        | Delete current buffer                                    |
+| <leader>a  | Normal        | Harpoon add list                                         |
+| <leader>e  | Normal        | Harpoon toggle quick menu                                |
 
 ## Command
 
