@@ -87,7 +87,6 @@ return {
 			extensions = {},
 		}
 
-		local lualine = require("lualine")
-		lualine.setup(config)
+		require("lualine").setup(config)
 	end,
 }

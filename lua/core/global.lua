@@ -1,2 +1,2 @@
--- Global settings
-vim.api.nvim_set_var("mapleader", " ") -- leaderキーをspaceに変更
+-- Leader key
+vim.api.nvim_set_var("mapleader", " ")

@@ -1,7 +1,7 @@
 -- Terminal
 if vim.g.vscode == nil then
-	vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { silent = true }) -- ESCキーでターミナルモードからノーマルモードに移行
-	vim.keymap.set("n", "tt", "<cmd>belowright new<CR><cmd>terminal<CR>", { silent = true }) -- ttで下分割でターミナルを起動
+	vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { silent = true })
+	vim.keymap.set("n", "tt", "<cmd>belowright new<CR><cmd>terminal<CR>", { silent = true })
 end
 
 -- Move buffer

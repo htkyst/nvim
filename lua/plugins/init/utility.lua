@@ -15,6 +15,7 @@ return {
 	},
 
 	{
+		-- Nerd Font icons
 		"nvim-tree/nvim-web-devicons",
 	},
 }
