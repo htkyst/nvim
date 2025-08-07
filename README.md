@@ -70,11 +70,3 @@
 | q          | Normal        | Delete current buffer                                    |
 | <leader>a  | Normal        | Harpoon add list                                         |
 | <leader>e  | Normal        | Harpoon toggle quick menu                                |
-
-## Command
-
-| Command   | Description                   |
-| :-------- | ----------------------------- |
-| PeekOpen  | Open markdown preview window  |
-| PeekClose | Close markdown preview window |
-| Neogen    | Create doxygen comment        |

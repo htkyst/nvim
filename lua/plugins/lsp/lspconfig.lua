@@ -1,6 +1,7 @@
 return {
 	{
 		"williamboman/mason-lspconfig.nvim",
+		version = "^1.0.0",
 		dependencies = {
 			{ "neovim/nvim-lspconfig" },
 			{ "hrsh7th/cmp-nvim-lsp" },
@@ -17,6 +18,10 @@ return {
 					"rust_analyzer",
 					"clangd",
 					"csharp_ls",
+					"html", -- html-lsp
+					"cssls", -- css-lsp
+					"ts_ls", -- typescript-language-server
+					"pyright",
 				},
 			})
 
@@ -64,6 +69,30 @@ return {
 
 				["csharp_ls"] = function()
 					lspconfig.csharp_ls.setup({
+						capabilities = capabilities,
+					})
+				end,
+
+				["html"] = function()
+					lspconfig.html.setup({
+						capabilities = capabilities,
+					})
+				end,
+
+				["cssls"] = function()
+					lspconfig.cssls.setup({
+						capabilities = capabilities,
+					})
+				end,
+
+				["ts_ls"] = function()
+					lspconfig.ts_ls.setup({
+						capabilities = capabilities,
+					})
+				end,
+
+				["pyright"] = function()
+					lspconfig.pyright.setup({
 						capabilities = capabilities,
 					})
 				end,

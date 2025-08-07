@@ -17,3 +17,7 @@ vim.keymap.set("n", "<leader>l", "<C-w>l", { silent = true })
 -- Split pane
 vim.keymap.set("n", "ss", ":split<Return><C-w>w")
 vim.keymap.set("n", "sv", ":vsplit<Return><C-w>w")
+
+-- Move to line begin and end
+vim.keymap.set("n", "0", "$")
+vim.keymap.set("n", "1", "0")
