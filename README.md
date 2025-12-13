@@ -1,5 +1,11 @@
 # Neovim configuration
 
+## Neovim version
+
+NVIM v0.11.3
+Build type: Release
+LuaJIT 2.1.1741730670
+
 ## Requirement
 
 - Git
