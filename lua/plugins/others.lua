@@ -20,6 +20,7 @@ return {
 	},
 
 	{
+		-- Show hightlight count
 		"kevinhwang91/nvim-hlslens",
 		config = function()
 			require("scrollbar.handlers.search").setup()
