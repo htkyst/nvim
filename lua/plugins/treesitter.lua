@@ -1,33 +1,30 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		event = "UIEnter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-		config = function()
-			local configs = require("nvim-treesitter.configs")
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        -- dependencies = {
+        --     "nvim-treesitter/nvim-treesitter-textobjects",
+        -- },
+        config = function()
+            local treesitter = require("nvim-treesitter")
 
-			configs.setup({
-				ensure_installed = { "lua", "vim", "vimdoc" },
-				sync_install = false,
-				auto_install = false,
-				highlight = { enable = true },
-				indent = { enable = true },
-			})
-		end,
-	},
+            treesitter.install({
+                "lua",
+                "vim",
+                "vimdoc",
+            })
+        end,
+    },
 
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		event = "UIEnter",
-		config = function()
-			require("treesitter-context").setup()
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        event = "BufReadPost",
+        config = function()
+            require("treesitter-context").setup()
 
-			vim.keymap.set("n", "[c", function()
-				require("treesitter-context").go_to_context(vim.v.count1)
-			end, { silent = true })
-		end,
-	},
+            vim.keymap.set("n", "[c", function()
+                require("treesitter-context").go_to_context(vim.v.count1)
+            end, { silent = true })
+        end,
+    },
 }
